@@ -48,6 +48,7 @@ and
 >MORE INFORMATION DOESN’T NECESSARILY MEAN RAWER DATA
 
 ### What does it mean that "data is immutable"
+In Big Data Systems, data doesn't get updated or deleted, instead, more data is added, so it handle human faults and simplicity
 
 ### What does it mean that "data is eternally true"
 
@@ -63,8 +64,8 @@ and
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0Njk2MTg3NSwtNTQyODcyMTk0LC0xMz
-Q0NTQ0NjE1LC0xNDkxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0
-NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV
-19
+eyJoaXN0b3J5IjpbLTIwNjM0ODYxMzMsLTU0Mjg3MjE5NCwtMT
+M0NDU0NDYxNSwtMTQ5MTg5NDYwMywtMTMwODYzMjk0LDEzODgy
+NDQ0OTMsLTE5NDM4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MD
+FdfQ==
 -->

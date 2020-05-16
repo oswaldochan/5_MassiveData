@@ -56,7 +56,8 @@ In a immutable schema:
 > The key consequence of immutability is that each piece of data is true in perpetuity. That is, a piece of data, once true, must always be true. Immutability wouldn’t make sense without this property
 
 ### What is a fact?
-It's the fundamental unit of data, like the *atoms*
+It's the fundamental unit of data, like *atoms* of data.
+
 
 ### What are the properties of facts?
 
@@ -68,8 +69,8 @@ It's the fundamental unit of data, like the *atoms*
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3NjY2NzY0MSwtNTQyODcyMTk0LC0xMz
-Q0NTQ0NjE1LC0xNDkxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0
-NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV
-19
+eyJoaXN0b3J5IjpbMzk5MzU4NzU1LC01NDI4NzIxOTQsLTEzND
+Q1NDQ2MTUsLTE0OTE4OTQ2MDMsLTEzMDg2MzI5NCwxMzg4MjQ0
+NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX
+0=
 -->

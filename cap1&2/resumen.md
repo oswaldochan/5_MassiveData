@@ -40,6 +40,8 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 ### What does it mean that "data is raw"
 In a few words, it means that you can deduct more information from it. Somehow it means the data is *less processed*, and thus, you can get more insights from it because you have more room to play and experiment with your data.
 Also there exists the concept of *granularity*, which means that the data is more crumbled.
+
+It's important to notice that:
 > UNSTRUCTURED DATA IS RAWER THAN NORMALIZED DATA
 
 and
@@ -61,8 +63,8 @@ and
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg4MDAwMzc4LC01NDI4NzIxOTQsLTEzND
-Q1NDQ2MTUsLTE0OTE4OTQ2MDMsLTEzMDg2MzI5NCwxMzg4MjQ0
-NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX
-0=
+eyJoaXN0b3J5IjpbLTQ0Njk2MTg3NSwtNTQyODcyMTk0LC0xMz
+Q0NTQ0NjE1LC0xNDkxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0
+NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV
+19
 -->

@@ -20,10 +20,12 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 - Robustness and fault tolerance: it must handle technical problems with the machines
 - Low latency reads and updates: it must access in a matter of milliseconds
 - Scalability: more data? no problem
-- Generalization: it must function with a va
+- Generalization: it must supports a variety of applications
+- Extensibility: more functionalities with less development cost
+- Ad hoc queries: it must me able t
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ0OTU3ODY1LC0xMzA4NjMyOTQsMTM4OD
-I0NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgw
-MV19
+eyJoaXN0b3J5IjpbMTczNDUwMTA2MSwtMTMwODYzMjk0LDEzOD
+gyNDQ0OTMsLTE5NDM4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4
+MDFdfQ==
 -->

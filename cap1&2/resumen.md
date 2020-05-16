@@ -22,10 +22,14 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 - Scalability: more data? no problem
 - Generalization: it must supports a variety of applications
 - Extensibility: more functionalities with less development cost
-- Ad hoc queries: it must me able t
+- Ad hoc queries: it must me able to mine a dataset arbitrarily
+- Minimal maintenance
+- Debuggability: if something goes wrong, it must be clear where.
+
+
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczNDUwMTA2MSwtMTMwODYzMjk0LDEzOD
-gyNDQ0OTMsLTE5NDM4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4
-MDFdfQ==
+eyJoaXN0b3J5IjpbLTExODc5Njg2MjIsLTEzMDg2MzI5NCwxMz
+g4MjQ0NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4
+ODAxXX0=
 -->

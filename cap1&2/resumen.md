@@ -42,16 +42,18 @@ In a few words, it means that you can deduct more information from it. Somehow i
 Also there exists the concept of *granularity*, which means that the data is more crumbled.
 
 It's important to notice that:
-> UNSTRUCTURED DATA IS RAWER THAN NORMALIZED DATA
+> Unstructured data is rawer than normalized data
 
 and
->MORE INFORMATION DOESN’T NECESSARILY MEAN RAWER DATA
+
+>More information doesn't necessarily mean rawer data
 
 ### What does it mean that "data is immutable"
 In Big Data Systems, data doesn't get updated or deleted, instead, more data is added, so it handle human faults and gains simplicity
 In a immutable schema:
 > Rather than storing a current snapshot of the world, as done by the mutable schema, you create a separate record every time a user’s information evolves.
 ### What does it mean that "data is eternally true"
+> The key consequence of immutability is that each piece of data is true in perpetuity. That is, a piece of data, once true, must always be true. Immutability wouldn’t make sense without this property
 
 ### What is a fact?
 
@@ -65,8 +67,8 @@ In a immutable schema:
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjU5NTg0MDQsLTU0Mjg3MjE5NCwtMT
-M0NDU0NDYxNSwtMTQ5MTg5NDYwMywtMTMwODYzMjk0LDEzODgy
-NDQ0OTMsLTE5NDM4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MD
-FdfQ==
+eyJoaXN0b3J5IjpbMTQzNTQ4NDM2MywtNTQyODcyMTk0LC0xMz
+Q0NTQ0NjE1LC0xNDkxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0
+NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV
+19
 -->

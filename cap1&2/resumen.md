@@ -60,8 +60,8 @@ It's the fundamental unit of data, like *atoms* of data.
 
 
 ### What are the properties of facts?
-- *Atomic*: because they can't be divided in smaller pieces
-- 
+- **Atomic**: because they can't be divided in smaller pieces
+- **Timestamped**: because every piece of data has a *birth date*, which makes apparently duplicated data, unique  
 
 ### What are the advantages of the fact based model?
 
@@ -71,8 +71,8 @@ It's the fundamental unit of data, like *atoms* of data.
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwMzUyNjcwMywtNTQyODcyMTk0LC0xMz
-Q0NTQ0NjE1LC0xNDkxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0
-NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV
-19
+eyJoaXN0b3J5IjpbLTEyMDc4NzI3NTIsLTU0Mjg3MjE5NCwtMT
+M0NDU0NDYxNSwtMTQ5MTg5NDYwMywtMTMwODYzMjk0LDEzODgy
+NDQ0OTMsLTE5NDM4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MD
+FdfQ==
 -->

@@ -8,8 +8,7 @@ Adding queues to write in the database can be a temporal solution, but if the nu
 ### At the moment of scaling a RDBMS, what is the problem of sharding?
 This can also be a good solution if the database isn't going to keep escalating, because in a few words, sharding means that you divide the database in different parts to share it across multiple machines. 
 But, if the number of requests gets larger, this method will get more complex and will reduce the speed of the system.
-Also, this can also create fault-tolerance issues and corruption issues
-
+Also, this can also create fault-tolerance issues and corruption issues.
 ### Why aren't NoSQL databases used more often?
 Because it has some trade-offs, so this systems are not suitable for all cases.
 Per example, Hadoop's computations have high latency, and NoSQL databases like Cassandra used a more limited data model.
@@ -20,11 +19,11 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 
 ### What are some desired properties of a Big Data System?
 - **Robustness and fault tolerance**: it must handle technical problems with the machines
-- **Low latency reads and updates**: it must access in a matter of milliseconds
+- **Low latency reads and updates**: it must access in a matter of milliseconds.
 - **Scalability**: more data? no problem
-- **Generalizatio**n: it must supports a variety of applications
-- **Extensibility**: more functionalities with less development cost
-- **Ad hoc queries**: it must me able to mine a dataset arbitrarily
+- **Generalizatio**n: it must supports a variety of applications.
+- **Extensibility**: more functionalities with less development cost.
+- **Ad hoc queries**: it must me able to mine a dataset arbitrarily.
 - **Minimal maintenance**: self explanatory
 - **Debuggability**: if something goes wrong, it must be clear where.
 
@@ -70,13 +69,15 @@ It's the fundamental unit of data, like *atoms* of data.
 > - Has the advantages of both normalized and denormalized forms.
 
 ### What is a graph schema?
+A way of:
+> capture the structure of a dataset stored using the fact-based model
 
 ### What are the elements of a graph schema?
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTUzOTE4Nzk0LC01NDI4NzIxOTQsLTEzND
-Q1NDQ2MTUsLTE0OTE4OTQ2MDMsLTEzMDg2MzI5NCwxMzg4MjQ0
-NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX
-0=
+eyJoaXN0b3J5IjpbMTgzNDA4MDk0MiwtNTQyODcyMTk0LC0xMz
+Q0NTQ0NjE1LC0xNDkxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0
+NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV
+19
 -->

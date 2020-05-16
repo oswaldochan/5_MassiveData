@@ -73,12 +73,12 @@ A way of:
 > capturing the structure of a dataset stored using the fact-based model using graphs.
 
 ### What are the elements of a graph schema?
-- **Nodes**: 
-- **Edges**:
-- **Properties**: 
+- **Nodes**: are the entities in the system.
+- **Edges**: are the relationships between nodes.
+- **Properties**: are the information about entities.
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyNzA1NTQ3LC01NDI4NzIxOTQsLTEzND
+eyJoaXN0b3J5IjpbLTE5MzQ2NTcyLC01NDI4NzIxOTQsLTEzND
 Q1NDQ2MTUsLTE0OTE4OTQ2MDMsLTEzMDg2MzI5NCwxMzg4MjQ0
 NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX
 0=

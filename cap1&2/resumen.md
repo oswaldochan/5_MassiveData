@@ -70,14 +70,16 @@ It's the fundamental unit of data, like *atoms* of data.
 
 ### What is a graph schema?
 A way of:
-> capture the structure of a dataset stored using the fact-based model
+> capturing the structure of a dataset stored using the fact-based model using graphs.
 
 ### What are the elements of a graph schema?
-
+- **Nodes**: 
+- **Edges**:
+- **Properties**: 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzNDA4MDk0MiwtNTQyODcyMTk0LC0xMz
-Q0NTQ0NjE1LC0xNDkxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0
-NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV
-19
+eyJoaXN0b3J5IjpbMTQyNzA1NTQ3LC01NDI4NzIxOTQsLTEzND
+Q1NDQ2MTUsLTE0OTE4OTQ2MDMsLTEzMDg2MzI5NCwxMzg4MjQ0
+NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX
+0=
 -->

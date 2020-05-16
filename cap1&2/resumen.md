@@ -32,11 +32,12 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 - **Lack of human-fault tolerance**: Any mistake will make the database to be corrupted, and as human mistakes are unavoidable, the system will eventually be corrupted by a human mistake.
 
 ## What are the differences between batch, serving and speed layer?
-- The **batch** layer is where the the database is precomputed, so it doesn't have to scan the whole database every time a query is made. The **serving** layer is where the last result of the *batch layer* can be viewed and accessed. Finally, the **speed** layer is updated in real time, so in the mid time the *serving layer is being updated and remplazed*
+- The **batch** layer is where the the database is precomputed, so it doesn't have to scan the whole database every time a query is made. The **serving** layer is where the last result of the *batch layer* can be viewed and accessed. Finally, the **speed** layer is updated in real time, so whilst the *serving layer* is being updated and replaced with newer data, the last data available can still be accessed.
+
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4NTQ4NTQ4OSwtMTM0NDU0NDYxNSwtMT
-Q5MTg5NDYwMywtMTMwODYzMjk0LDEzODgyNDQ0OTMsLTE5NDM4
-NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MDFdfQ==
+eyJoaXN0b3J5IjpbNzU4NjE5NjY4LC0xMzQ0NTQ0NjE1LC0xND
+kxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0NDQ5MywtMTk0Mzg2
+MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV19
 -->

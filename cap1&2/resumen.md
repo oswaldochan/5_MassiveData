@@ -29,10 +29,10 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 ## What are some problems of fully Incremental architectures?
 - **Operational complexity**: getting rid of unused parts of the database that occupy memory and can fill the disk, it's dealt by a process called compaction, which adds complexity to the system.
 - **Extreme complexity of achieving eventual consistency**:  in order for the system to be *highly available*, it must keep its *consistency*, which is very complex , even with small amounts of data. 
-- **Lack of human-fault tolerance**: Any mistake will make the database to be corrupted, and as human mistakes are 
+- **Lack of human-fault tolerance**: Any mistake will make the database to be corrupted, and as human mistakes are unavoidable, the system will eventually be corrupted by a human mistake.
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzk5Njg2MDQsLTEzMDg2MzI5NCwxMz
+eyJoaXN0b3J5IjpbLTE0OTE4OTQ2MDMsLTEzMDg2MzI5NCwxMz
 g4MjQ0NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4
 ODAxXX0=
 -->

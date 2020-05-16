@@ -10,11 +10,11 @@ Also, this can also create fault-tolerance issues and corruption issues
 
 ## Why aren't NoSQL databases used more often?
 Because it has some trade-offs, so this systems are not suitable for all cases.
-Per example, Hadoop's computations have high latency, and NoSQL databases like Cassandra offer 
+Per example, Hadoop's computations have high latency, and NoSQL databases like Cassandra used a more limited data model.
 
 ---
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTQ4MjA3MzUsLTE5NDM4NjIzOTQsNT
-IwNjMwOTI0LDEwODUxMjg4MDFdfQ==
+eyJoaXN0b3J5IjpbMTM4ODI0NDQ5MywtMTk0Mzg2MjM5NCw1Mj
+A2MzA5MjQsMTA4NTEyODgwMV19
 -->

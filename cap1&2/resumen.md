@@ -12,9 +12,10 @@ Also, this can also create fault-tolerance issues and corruption issues
 Because it has some trade-offs, so this systems are not suitable for all cases.
 Per example, Hadoop's computations have high latency, and NoSQL databases like Cassandra used a more limited data model.
 
+## What is Lambda Architecture?
+""
 ---
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4ODI0NDQ5MywtMTk0Mzg2MjM5NCw1Mj
-A2MzA5MjQsMTA4NTEyODgwMV19
+eyJoaXN0b3J5IjpbNjU1ODk0Nzc2LDEzODgyNDQ0OTMsLTE5ND
+M4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MDFdfQ==
 -->

@@ -1,4 +1,6 @@
-# Questions chapter 1
+# Questions
+ 
+# - Chapter 1
 
 ## At the moment of scaling a RDBMS, what is the problem of using a queue?
 Adding queues to write in the database can be a temporal solution, but if the number of requests get larger, the database will become the bottleneck and thus the whole system will function slower.
@@ -53,7 +55,7 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0MzQwMzUzNCwtMTM0NDU0NDYxNSwtMT
+eyJoaXN0b3J5IjpbLTQ5MzM4NzM5NCwtMTM0NDU0NDYxNSwtMT
 Q5MTg5NDYwMywtMTMwODYzMjk0LDEzODgyNDQ0OTMsLTE5NDM4
 NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MDFdfQ==
 -->

@@ -18,9 +18,9 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 
 ## What are some desired properties of a Big Data System?
 - Robustness and fault tolerance: it must handle technical problems with the machines
-- Low latency reads and updates:
+- Low latency reads and updates: 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzNjI3NTM2NCwxMzg4MjQ0NDkzLC0xOT
+eyJoaXN0b3J5IjpbLTEzMDg2MzI5NCwxMzg4MjQ0NDkzLC0xOT
 QzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX0=
 -->

@@ -27,10 +27,11 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 - Debuggability: if something goes wrong, it must be clear where.
 
 ## What are some problems of fully Incremental architectures?
-- Operational complexity: getting rid of unused parts of the database, that occupies memory and 
+- Operational complexity: getting rid of unused parts of the database that occupy memory and can fill the disk, it's dealt by a process called compaction, which adds complexity to the system.
+- Extreme complexity of achieving eventual consistency: 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDIwNTI3MTQsLTEzMDg2MzI5NCwxMz
-g4MjQ0NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4
-ODAxXX0=
+eyJoaXN0b3J5IjpbMjI5NjMyMzg1LC0xMzA4NjMyOTQsMTM4OD
+I0NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgw
+MV19
 -->

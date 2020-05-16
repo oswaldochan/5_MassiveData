@@ -46,14 +46,14 @@ It's important to notice that:
 
 and
 
->More information doesn't necessarily mean rawer data
+>More information doesn't necessarily mean rawer data.
 
 ### What does it mean that "data is immutable"
 In Big Data Systems, data doesn't get updated or deleted, instead, more data is added, so it handle human faults and gains simplicity
 In a immutable schema:
 > Rather than storing a current snapshot of the world, as done by the mutable schema, you create a separate record every time a user’s information evolves.
 ### What does it mean that "data is eternally true"
-> The key consequence of immutability is that each piece of data is true in perpetuity. That is, a piece of data, once true, must always be true. Immutability wouldn’t make sense without this property
+> The key consequence of immutability is that each piece of data is true in perpetuity. That is, a piece of data, once true, must always be true. Immutability wouldn’t make sense without this property.
 
 ### What is a fact?
 It's the fundamental unit of data, like *atoms* of data.
@@ -61,9 +61,13 @@ It's the fundamental unit of data, like *atoms* of data.
 
 ### What are the properties of facts?
 - **Atomic**: because they can't be divided in smaller pieces
-- **Timestamped**: because every piece of data has a *birth date*, which makes apparently duplicated data, unique  
+- **Timestamped**: because every piece of data has a *birth date*, which makes apparently duplicated data, unique one from another. 
 
 ### What are the advantages of the fact based model?
+> - Is queryable at any time in its history.
+> - Tolerated human errors.
+> - Handles partial information.
+> - Has the advantages of both normalized and denormalized forms.
 
 ### What is a graph schema?
 
@@ -71,8 +75,8 @@ It's the fundamental unit of data, like *atoms* of data.
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDc4NzI3NTIsLTU0Mjg3MjE5NCwtMT
-M0NDU0NDYxNSwtMTQ5MTg5NDYwMywtMTMwODYzMjk0LDEzODgy
-NDQ0OTMsLTE5NDM4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MD
-FdfQ==
+eyJoaXN0b3J5IjpbOTUzOTE4Nzk0LC01NDI4NzIxOTQsLTEzND
+Q1NDQ2MTUsLTE0OTE4OTQ2MDMsLTEzMDg2MzI5NCwxMzg4MjQ0
+NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX
+0=
 -->

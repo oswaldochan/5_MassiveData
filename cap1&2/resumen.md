@@ -39,7 +39,11 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 ## Chapter 2
 ### What does it mean that "data is raw"
 In a few words, it means that you can deduct more information from it. Somehow it means the data is *less processed*, and thus, you can get more insights from it because you have more room to play and experiment with your data.
-Also there exists the concept of *gra
+Also there exists the concept of *granularity*, which means that the data is more crumbled.
+> UNSTRUCTURED DATA IS RAWER THAN NORMALIZED DATA
+
+and
+>MORE INFORMATION DOESN’T NECESSARILY MEAN RAWER DATA
 
 ### What does it mean that "data is immutable"
 
@@ -57,8 +61,8 @@ Also there exists the concept of *gra
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODUzNzcxNzksLTU0Mjg3MjE5NCwtMT
-M0NDU0NDYxNSwtMTQ5MTg5NDYwMywtMTMwODYzMjk0LDEzODgy
-NDQ0OTMsLTE5NDM4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MD
-FdfQ==
+eyJoaXN0b3J5IjpbMjg4MDAwMzc4LC01NDI4NzIxOTQsLTEzND
+Q1NDQ2MTUsLTE0OTE4OTQ2MDMsLTEzMDg2MzI5NCwxMzg4MjQ0
+NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX
+0=
 -->

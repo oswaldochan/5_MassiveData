@@ -13,9 +13,12 @@ Because it has some trade-offs, so this systems are not suitable for all cases.
 Per example, Hadoop's computations have high latency, and NoSQL databases like Cassandra used a more limited data model.
 
 ## What is Lambda Architecture?
-""
+> " The Lambda Architecture provides a general-purpose approach to implementing an arbitrary function on an arbitrary dataset and having the function return its results with low latency. "
+> "The Lambda Architecture defines a consistent approach to choosing the technologies to implement a data system to and to wiring them together to meet your requirements. "
+
+## What are some
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU1ODk0Nzc2LDEzODgyNDQ0OTMsLTE5ND
-M4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MDFdfQ==
+eyJoaXN0b3J5IjpbLTMwNjg3NTI5NywxMzg4MjQ0NDkzLC0xOT
+QzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX0=
 -->

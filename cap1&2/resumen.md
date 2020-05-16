@@ -5,11 +5,12 @@ Adding queues to write in the database can be a temporal solution, but if the nu
 
 ## At the moment of scaling a RDBMS, what is the problem of sharding?
 
-This can also be a good solution if the database isn't going to keep escalating, because in a few sh
+This can also be a good solution if the database isn't going to keep escalating, because in a few words, sharding means that you divide the database in different parts to share it across multiple machines. 
+But, if the number of requests gets larger, this method will get more complex and will reduce the speed of the system.
 
 ---
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM5Mzc2Mjg4LDUyMDYzMDkyNCwxMDg1MT
-I4ODAxXX0=
+eyJoaXN0b3J5IjpbMTM5OTcxMzgwMCw1MjA2MzA5MjQsMTA4NT
+EyODgwMV19
 -->

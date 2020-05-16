@@ -35,11 +35,25 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 - The **batch** layer is where the the database is precomputed, so it doesn't have to scan the whole database every time a query is made. The **serving** layer is where the last result of the *batch layer* can be viewed and accessed. Finally, the **speed** layer is updated in real time, so whilst the *serving layer* is being updated and replaced with newer data, the last data available can still be accessed.
 
 # Chapter 2
+## What does it mean that "data is raw"
 
+## What does it mean that "data is immutable"
+
+## What does it mean that "data is eternally true"
+
+## What is a fact?
+
+## What are the properties of facts?
+
+## What are the advantages of the fact based model?
+
+## What is a graph schema?
+
+## What are the elements of a graph schema?
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzkxOTg2MzIwLC0xMzQ0NTQ0NjE1LC0xND
-kxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0NDQ5MywtMTk0Mzg2
-MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV19
+eyJoaXN0b3J5IjpbMTQ0MzQwMzUzNCwtMTM0NDU0NDYxNSwtMT
+Q5MTg5NDYwMywtMTMwODYzMjk0LDEzODgyNDQ0OTMsLTE5NDM4
+NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MDFdfQ==
 -->

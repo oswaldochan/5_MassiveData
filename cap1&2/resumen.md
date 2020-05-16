@@ -10,15 +10,15 @@ This can also be a good solution if the database isn't going to keep escalating,
 But, if the number of requests gets larger, this method will get more complex and will reduce the speed of the system.
 Also, this can also create fault-tolerance issues and corruption issues
 
-## Why aren't NoSQL databases used more often?
+### Why aren't NoSQL databases used more often?
 Because it has some trade-offs, so this systems are not suitable for all cases.
 Per example, Hadoop's computations have high latency, and NoSQL databases like Cassandra used a more limited data model.
 
-## What is Lambda Architecture?
+### What is Lambda Architecture?
 > " The Lambda Architecture provides a general-purpose approach to implementing an arbitrary function on an arbitrary dataset and having the function return its results with low latency. "
 > "The Lambda Architecture defines a consistent approach to choosing the technologies to implement a data system to and to wiring them together to meet your requirements. "
 
-## What are some desired properties of a Big Data System?
+### What are some desired properties of a Big Data System?
 - **Robustness and fault tolerance**: it must handle technical problems with the machines
 - **Low latency reads and updates**: it must access in a matter of milliseconds
 - **Scalability**: more data? no problem
@@ -28,34 +28,35 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 - **Minimal maintenance**: self explanatory
 - **Debuggability**: if something goes wrong, it must be clear where.
 
-## What are some problems of fully Incremental architectures?
+### What are some problems of fully Incremental architectures?
 - **Operational complexity**: getting rid of unused parts of the database that occupy memory and can fill the disk, it's dealt by a process called compaction, which adds complexity to the system.
 - **Extreme complexity of achieving eventual consistency**:  in order for the system to be *highly available*, it must keep its *consistency*, which is very complex , even with small amounts of data. 
 - **Lack of human-fault tolerance**: Any mistake will make the database to be corrupted, and as human mistakes are unavoidable, the system will eventually be corrupted by a human mistake.
 
-## What are the differences between batch, serving and speed layer?
+### What are the differences between batch, serving and speed layer?
 - The **batch** layer is where the the database is precomputed, so it doesn't have to scan the whole database every time a query is made. The **serving** layer is where the last result of the *batch layer* can be viewed and accessed. Finally, the **speed** layer is updated in real time, so whilst the *serving layer* is being updated and replaced with newer data, the last data available can still be accessed.
 
-# Chapter 2
-## What does it mean that "data is raw"
+## Chapter 2
+### What does it mean that "data is raw"
 
-## What does it mean that "data is immutable"
 
-## What does it mean that "data is eternally true"
+### What does it mean that "data is immutable"
 
-## What is a fact?
+### What does it mean that "data is eternally true"
 
-## What are the properties of facts?
+### What is a fact?
 
-## What are the advantages of the fact based model?
+### What are the properties of facts?
 
-## What is a graph schema?
+### What are the advantages of the fact based model?
 
-## What are the elements of a graph schema?
+### What is a graph schema?
+
+### What are the elements of a graph schema?
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2NjQyOTQ5MiwtMTM0NDU0NDYxNSwtMT
+eyJoaXN0b3J5IjpbLTU0Mjg3MjE5NCwtMTM0NDU0NDYxNSwtMT
 Q5MTg5NDYwMywtMTMwODYzMjk0LDEzODgyNDQ0OTMsLTE5NDM4
 NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MDFdfQ==
 -->

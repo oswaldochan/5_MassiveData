@@ -60,6 +60,8 @@ It's the fundamental unit of data, like *atoms* of data.
 
 
 ### What are the properties of facts?
+- *Atomic*: because they can't be divided in smaller pieces
+- 
 
 ### What are the advantages of the fact based model?
 
@@ -69,8 +71,8 @@ It's the fundamental unit of data, like *atoms* of data.
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk5MzU4NzU1LC01NDI4NzIxOTQsLTEzND
-Q1NDQ2MTUsLTE0OTE4OTQ2MDMsLTEzMDg2MzI5NCwxMzg4MjQ0
-NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX
-0=
+eyJoaXN0b3J5IjpbMTYwMzUyNjcwMywtNTQyODcyMTk0LC0xMz
+Q0NTQ0NjE1LC0xNDkxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0
+NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV
+19
 -->

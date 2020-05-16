@@ -16,9 +16,11 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 > " The Lambda Architecture provides a general-purpose approach to implementing an arbitrary function on an arbitrary dataset and having the function return its results with low latency. "
 > "The Lambda Architecture defines a consistent approach to choosing the technologies to implement a data system to and to wiring them together to meet your requirements. "
 
-## What are some
+## What are some desired properties of a Big Data System?
+- Robustness and fault tolerance: it must handle technical problems with the machines
+- Low latency reads and updates:
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNjg3NTI5NywxMzg4MjQ0NDkzLC0xOT
+eyJoaXN0b3J5IjpbLTMzNjI3NTM2NCwxMzg4MjQ0NDkzLC0xOT
 QzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4ODAxXX0=
 -->

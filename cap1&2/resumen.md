@@ -7,10 +7,12 @@ Adding queues to write in the database can be a temporal solution, but if the nu
 
 This can also be a good solution if the database isn't going to keep escalating, because in a few words, sharding means that you divide the database in different parts to share it across multiple machines. 
 But, if the number of requests gets larger, this method will get more complex and will reduce the speed of the system.
+Also, this can also create fault-tolerance issues and corruption issues
+
 
 ---
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5OTcxMzgwMCw1MjA2MzA5MjQsMTA4NT
-EyODgwMV19
+eyJoaXN0b3J5IjpbLTE5NDM4NjIzOTQsNTIwNjMwOTI0LDEwOD
+UxMjg4MDFdfQ==
 -->

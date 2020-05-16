@@ -17,21 +17,21 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 > "The Lambda Architecture defines a consistent approach to choosing the technologies to implement a data system to and to wiring them together to meet your requirements. "
 
 ## What are some desired properties of a Big Data System?
-- Robustness and fault tolerance: it must handle technical problems with the machines
-- Low latency reads and updates: it must access in a matter of milliseconds
-- Scalability: more data? no problem
-- Generalization: it must supports a variety of applications
-- Extensibility: more functionalities with less development cost
-- Ad hoc queries: it must me able to mine a dataset arbitrarily
-- Minimal maintenance
-- Debuggability: if something goes wrong, it must be clear where.
+- **Robustness and fault tolerance**: it must handle technical problems with the machines
+- **Low latency reads and updates**: it must access in a matter of milliseconds
+- **Scalability**: more data? no problem
+- **Generalizatio**n: it must supports a variety of applications
+- **Extensibility**: more functionalities with less development cost
+- **Ad hoc queries**: it must me able to mine a dataset arbitrarily
+- **Minimal maintenance**: self explanatory
+- **Debuggability**: if something goes wrong, it must be clear where.
 
 ## What are some problems of fully Incremental architectures?
-- Operational complexity: getting rid of unused parts of the database that occupy memory and can fill the disk, it's dealt by a process called compaction, which adds complexity to the system.
-- Extreme complexity of achieving eventual consistency: 
+- **Operational complexity**: getting rid of unused parts of the database that occupy memory and can fill the disk, it's dealt by a process called compaction, which adds complexity to the system.
+- **Extreme complexity of achieving eventual consistency**:  
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI5NjMyMzg1LC0xMzA4NjMyOTQsMTM4OD
-I0NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgw
-MV19
+eyJoaXN0b3J5IjpbMTg4OTc4MzMxOCwtMTMwODYzMjk0LDEzOD
+gyNDQ0OTMsLTE5NDM4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4
+MDFdfQ==
 -->

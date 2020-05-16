@@ -38,7 +38,7 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 
 ## Chapter 2
 ### What does it mean that "data is raw"
-
+In a few words, it means that you can deduct more information from it. Somehow it means the data is *less processed*, and thu
 
 ### What does it mean that "data is immutable"
 
@@ -56,7 +56,8 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0Mjg3MjE5NCwtMTM0NDU0NDYxNSwtMT
-Q5MTg5NDYwMywtMTMwODYzMjk0LDEzODgyNDQ0OTMsLTE5NDM4
-NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MDFdfQ==
+eyJoaXN0b3J5IjpbMTU5ODcwMzMwMiwtNTQyODcyMTk0LC0xMz
+Q0NTQ0NjE1LC0xNDkxODk0NjAzLC0xMzA4NjMyOTQsMTM4ODI0
+NDQ5MywtMTk0Mzg2MjM5NCw1MjA2MzA5MjQsMTA4NTEyODgwMV
+19
 -->

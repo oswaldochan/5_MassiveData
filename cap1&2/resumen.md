@@ -26,10 +26,10 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 - Minimal maintenance
 - Debuggability: if something goes wrong, it must be clear where.
 
-
+## What are some problems of fully inc
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExODc5Njg2MjIsLTEzMDg2MzI5NCwxMz
+eyJoaXN0b3J5IjpbLTE3OTAxNTI5MzUsLTEzMDg2MzI5NCwxMz
 g4MjQ0NDkzLC0xOTQzODYyMzk0LDUyMDYzMDkyNCwxMDg1MTI4
 ODAxXX0=
 -->

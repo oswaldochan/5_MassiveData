@@ -1,11 +1,11 @@
 # Questions
  
-# - Chapter 1
+## Chapter 1
 
-## At the moment of scaling a RDBMS, what is the problem of using a queue?
+### At the moment of scaling a RDBMS, what is the problem of using a queue?
 Adding queues to write in the database can be a temporal solution, but if the number of requests get larger, the database will become the bottleneck and thus the whole system will function slower.
 
-## At the moment of scaling a RDBMS, what is the problem of sharding?
+### At the moment of scaling a RDBMS, what is the problem of sharding?
 This can also be a good solution if the database isn't going to keep escalating, because in a few words, sharding means that you divide the database in different parts to share it across multiple machines. 
 But, if the number of requests gets larger, this method will get more complex and will reduce the speed of the system.
 Also, this can also create fault-tolerance issues and corruption issues
@@ -55,7 +55,7 @@ Per example, Hadoop's computations have high latency, and NoSQL databases like C
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5MzM4NzM5NCwtMTM0NDU0NDYxNSwtMT
+eyJoaXN0b3J5IjpbMTI2NjQyOTQ5MiwtMTM0NDU0NDYxNSwtMT
 Q5MTg5NDYwMywtMTMwODYzMjk0LDEzODgyNDQ0OTMsLTE5NDM4
 NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MDFdfQ==
 -->

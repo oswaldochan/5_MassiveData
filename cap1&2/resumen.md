@@ -48,8 +48,9 @@ and
 >MORE INFORMATION DOESN’T NECESSARILY MEAN RAWER DATA
 
 ### What does it mean that "data is immutable"
-In Big Data Systems, data doesn't get updated or deleted, instead, more data is added, so it handle human faults and simplicity
-
+In Big Data Systems, data doesn't get updated or deleted, instead, more data is added, so it handle human faults and gains simplicity
+In a immutable schema:
+> Rather than storing a current snapshot of the world, as done by the mutable schema, you create a separate record every time a user’s information evolves.
 ### What does it mean that "data is eternally true"
 
 ### What is a fact?
@@ -64,7 +65,7 @@ In Big Data Systems, data doesn't get updated or deleted, instead, more data is 
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjM0ODYxMzMsLTU0Mjg3MjE5NCwtMT
+eyJoaXN0b3J5IjpbLTE1NjU5NTg0MDQsLTU0Mjg3MjE5NCwtMT
 M0NDU0NDYxNSwtMTQ5MTg5NDYwMywtMTMwODYzMjk0LDEzODgy
 NDQ0OTMsLTE5NDM4NjIzOTQsNTIwNjMwOTI0LDEwODUxMjg4MD
 FdfQ==

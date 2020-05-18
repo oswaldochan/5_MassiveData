@@ -1,4 +1,57 @@
-<h1 id="mongodb-cheat-sheet">MongoDB <em>Cheat Sheet</em></h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mongo_cheatsheet</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#mongodb-cheat-sheet">MongoDB Cheat Sheet</a>
+<ul>
+<li><a href="#center-show-all-databases"> Show All Databases</a></li>
+<li><a href="#centershow-current-database">Show Current Database</a></li>
+<li><a href="#center-create-or-switch-database"> Create Or Switch Database</a></li>
+<li><a href="#centerdrop">Drop</a></li>
+<li><a href="#center-create-collection"> Create Collection</a></li>
+<li><a href="#centershow-collections">Show Collections</a></li>
+<li><a href="#center-insert-row"> Insert Row</a></li>
+<li><a href="#centerinsert-multiple-rows">Insert Multiple Rows</a></li>
+<li><a href="#centerget-all-rows">Get All Rows</a></li>
+<li><a href="#centerget-all-rows-formatted">Get All Rows Formatted</a></li>
+<li><a href="#centerfind-rows">Find Rows</a></li>
+<li><a href="#centersort-rows">Sort Rows</a></li>
+<li><a href="#centercount-rows">Count Rows</a></li>
+<li><a href="#centerlimit-rows">Limit Rows</a></li>
+<li><a href="#centerchaining">Chaining</a></li>
+<li><a href="#centerforeach">Foreach</a></li>
+<li><a href="#centerfind-one-row">Find One Row</a></li>
+<li><a href="#centerfind-specific-fields">Find Specific Fields</a></li>
+<li><a href="#centerupdate-row">Update Row</a></li>
+<li><a href="#centerupdate-specific-field">Update Specific Field</a></li>
+<li><a href="#centerincrement-field-inc">Increment Field ($inc)</a></li>
+<li><a href="#centerrename-field">Rename Field</a></li>
+<li><a href="#centerdelete-row">Delete Row</a></li>
+<li><a href="#centersub-documents">Sub-Documents</a></li>
+<li><a href="#centerfind-by-element-in-array-elemmatch">Find By Element in Array ($elemMatch)</a></li>
+<li><a href="#centeradd-index">Add Index</a></li>
+<li><a href="#centertext-search">Text Search</a></li>
+<li><a href="#centergreater--less-than">Greater & Less Than</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="mongodb-cheat-sheet">MongoDB <em>Cheat Sheet</em></h1>
 <h2 id="center-show-all-databases"><center> Show All Databases</center></h2>
 <pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">show</span> dbs
 </code></pre>
@@ -176,3 +229,8 @@
 <span class="token number">db</span><span class="token punctuation">.</span>posts<span class="token punctuation">.</span>find<span class="token punctuation">(</span>{ views: { $lte: <span class="token number">7</span> } }<span class="token punctuation">)</span>
 </code></pre>
 
+    </div>
+  </div>
+</body>
+
+</html>

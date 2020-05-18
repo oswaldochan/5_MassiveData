@@ -1,7 +1,4 @@
----
 
-
----
 
 <h1 id="mongodb-cheat-sheet">MongoDB <em>Cheat Sheet</em></h1>
 <h2 id="center-show-all-databases"><center> Show All Databases</center></h2>
@@ -180,4 +177,3 @@
 <span class="token number">db</span><span class="token punctuation">.</span>posts<span class="token punctuation">.</span>find<span class="token punctuation">(</span>{ views: { $lt: <span class="token number">7</span> } }<span class="token punctuation">)</span>
 <span class="token number">db</span><span class="token punctuation">.</span>posts<span class="token punctuation">.</span>find<span class="token punctuation">(</span>{ views: { $lte: <span class="token number">7</span> } }<span class="token punctuation">)</span>
 </code></pre>
-

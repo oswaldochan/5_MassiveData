@@ -18,8 +18,11 @@ You don't get a comprehensive alert of how the problem was originated.
 - **Nodes**: a single value that may have any of several representations.
 - **Edges**: each edge can be represented as a struct containing two nodes: 
 - **Properties**:  contains a node and a value for the property
-## Why is so important that in Thrift schemas can  
+### Why is so important that in Thrift schemas can evolve over time?
+> It is a crucial property, because as your business requirements change you’ll need to add new kinds of data, and you’ll want to do so as effortlessly as possible.  
+
+##
 ## Chapter 4
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTk1NDE5MTY1XX0=
+eyJoaXN0b3J5IjpbLTEzMzI5NDc1Nl19
 -->

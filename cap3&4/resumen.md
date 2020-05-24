@@ -21,8 +21,10 @@ You don't get a comprehensive alert of how the problem was originated.
 ### Why is so important that in Thrift schemas can evolve over time?
 > It is a crucial property, because as your business requirements change you’ll need to add new kinds of data, and you’ll want to do so as effortlessly as possible.  
 
-##
+### What is the limitation of serialization frameworks?
+> They only check that all required fields are present and are of the expected type. They’re unable to check richer properties like “Ages should be non-negative” or “true-as-of timestamps should not be in the future.” Data not matching these properties would indicate a problem in your system, and you wouldn’t want them written to your master dataset.
+> 
 ## Chapter 4
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzI5NDc1Nl19
+eyJoaXN0b3J5IjpbLTE1MDUwNDA0NTJdfQ==
 -->

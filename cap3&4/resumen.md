@@ -25,8 +25,9 @@ You don't get a comprehensive alert of how the problem was originated.
 > They only check that all required fields are present and are of the expected type. They’re unable to check richer properties like “Ages should be non-negative” or “true-as-of timestamps should not be in the future.” Data not matching these properties would indicate a problem in your system, and you wouldn’t want them written to your master dataset.
 > 
 ## Chapter 4
-
+#### But first, let's recapitulate what we learnt about the Lambda Architecture
+ 
 ## 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjQ3NjE2NF19
+eyJoaXN0b3J5IjpbLTE0ODM0MzQyOTUsLTE4MjQ3NjE2NF19
 -->

@@ -8,12 +8,14 @@ It could inevitably led to data corruption
 Because when you notice them, it's very difficult to trace back what occasioned it, or to detect what generated that corrupted data.
 You don't get a comprehensive alert of how the problem was originated.
 
-**This doesn't occur in an enforceable schema, because it will prevent any of those error to happen at the moment of writing the data**
+**_This doesn't occur in an enforceable schema, because it will prevent any of those error to happen at the moment of writing the data_**
 
 ### What is Apache Thrift?
 >  is a tool that can be used to define statically typed, enforceable schemas. It provides an interface definition language to describe the schema in terms of generic data types, and this description can later be used to automatically generate the actual implementation in multiple programming languages. 
 
+### What are the main components of Apache Thrift?
+
 ## Chapter 4
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTgzOTc1MjQyXX0=
+eyJoaXN0b3J5IjpbLTEwNjgxMDA1NThdfQ==
 -->

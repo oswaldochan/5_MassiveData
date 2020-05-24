@@ -14,8 +14,10 @@ You don't get a comprehensive alert of how the problem was originated.
 >  is a tool that can be used to define statically typed, enforceable schemas. It provides an interface definition language to describe the schema in terms of generic data types, and this description can later be used to automatically generate the actual implementation in multiple programming languages. 
 
 ### What are the main components of Apache Thrift?
-
+- **Nodes**: a single value that may have any of several representations.
+- **Edges**: each edge can be represented as a struct containing two nodes
+- **Properties**:
 ## Chapter 4
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjgxMDA1NThdfQ==
+eyJoaXN0b3J5IjpbOTAwMDc2NTczXX0=
 -->

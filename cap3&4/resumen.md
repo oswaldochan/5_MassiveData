@@ -47,8 +47,9 @@ Yes, it does
 > ![](https://github.com/oswaldochan/5_MassiveData/blob/master/cap3&4/images/Anotaci%C3%B3n%202020-05-24%20185826.png?raw=true) 
 
 ### What is vertical partitioning?
+> Although the batch layer is built to run functions on the entire dataset, many computations don’t require looking at all the data. For example, you may have a computation that only requires information collected during the past two weeks. The batch storage should allow you to partition your data so that a function only accesses data relevant to its computation. This process is called **vertical partitioning**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyODc3NTA5MywtMTY3NzA3NDYxMSw3NT
-E0NjY2NCwxMzkzNTIyNjMyLC0xNDgzNDM0Mjk1LC0xODI0NzYx
-NjRdfQ==
+eyJoaXN0b3J5IjpbLTE2NjczNzc2NjMsLTIyODc3NTA5MywtMT
+Y3NzA3NDYxMSw3NTE0NjY2NCwxMzkzNTIyNjMyLC0xNDgzNDM0
+Mjk1LC0xODI0NzYxNjRdfQ==
 -->

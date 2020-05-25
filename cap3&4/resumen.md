@@ -35,8 +35,10 @@ You don't get a comprehensive alert of how the problem was originated.
 > Because it has a lot of things you don’t need: random reads, random writes, and all the machinery behind making those work. In fact, most of the implementation of a key/value store is dedicated to these features you don’t need at all. This means the tool is enormously more complex than it needs to be to meet your requirements, making it much more likely you’ll have a problem with it
 
 ### What solution is better instead of _key/value_ for the batch layer?
+**Distributed filesystems**, which spread their storage across a cluster of computers. They scale by adding more machines to the cluster. Distributed filesystems are designed so that you have fault tolerance when a machine goes down, meaning that if you lose one machine, all your files and data will still be accessible.
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwNzUyNDk5MSwtMTQ4MzQzNDI5NSwtMT
-gyNDc2MTY0XX0=
+eyJoaXN0b3J5IjpbLTE2MDY4NzE2OTUsLTE0ODM0MzQyOTUsLT
+E4MjQ3NjE2NF19
 -->

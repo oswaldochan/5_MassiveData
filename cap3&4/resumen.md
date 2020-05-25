@@ -46,9 +46,9 @@ You don't get a comprehensive alert of how the problem was originated.
 Yes, it does
 > ![](https://github.com/oswaldochan/5_MassiveData/blob/master/cap3&4/images/Anotaci%C3%B3n%202020-05-24%20185826.png?raw=true) 
 
-
-
+### What is vertical partitioning?
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzcwNzQ2MTEsNzUxNDY2NjQsMTM5Mz
-UyMjYzMiwtMTQ4MzQzNDI5NSwtMTgyNDc2MTY0XX0=
+eyJoaXN0b3J5IjpbLTIyODc3NTA5MywtMTY3NzA3NDYxMSw3NT
+E0NjY2NCwxMzkzNTIyNjMyLC0xNDgzNDM0Mjk1LC0xODI0NzYx
+NjRdfQ==
 -->

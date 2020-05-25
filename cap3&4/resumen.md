@@ -38,11 +38,12 @@ You don't get a comprehensive alert of how the problem was originated.
 **Distributed filesystems**, which spread their storage across a cluster of computers. They scale by adding more machines to the cluster. Distributed filesystems are designed so that you have fault tolerance when a machine goes down, meaning that if you lose one machine, all your files and data will still be accessible.
 
 ### How does a distributed filesystem work?
->  In an HDFS cluster, there are two types of nodes: a single namenode and multiple datanodes. When you upload a file to HDFS, the file is first chunked into blocks of a fixed size, typically between 64 MB and 256 MB. Each block is then replicated across multiple datanodes (typically three) that are chosen at random. The namenode keeps track of the file-to-block mapping and where each block is located
+>  ■ Files are spread across multiple machines for scalability and also to enable parallel processing.
+> ■ File blocks are replicated across multiple nodes for fault tolerance
 >  ![](https://github.com/oswaldochan/5_MassiveData/blob/master/cap3&4/images/Anotaci%C3%B3n%202020-05-24%2018554666.png?raw=true)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2NTI1MTk3NCwtMTQ4MzQzNDI5NSwtMT
+eyJoaXN0b3J5IjpbMTM5MzUyMjYzMiwtMTQ4MzQzNDI5NSwtMT
 gyNDc2MTY0XX0=
 -->

@@ -42,9 +42,9 @@ You don't get a comprehensive alert of how the problem was originated.
 > ■ File blocks are replicated across multiple nodes for fault tolerance
 >  ![](https://github.com/oswaldochan/5_MassiveData/blob/master/cap3&4/images/Anotaci%C3%B3n%202020-05-24%2018554666.png?raw=true)
 
-### Does a distributed fyle
+### Does a distributed filesystem meet the requirements 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzUxNDY2NjQsMTM5MzUyMjYzMiwtMTQ4Mz
-QzNDI5NSwtMTgyNDc2MTY0XX0=
+eyJoaXN0b3J5IjpbLTk2MTU5NTAwOSw3NTE0NjY2NCwxMzkzNT
+IyNjMyLC0xNDgzNDM0Mjk1LC0xODI0NzYxNjRdfQ==
 -->

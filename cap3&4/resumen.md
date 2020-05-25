@@ -37,8 +37,12 @@ You don't get a comprehensive alert of how the problem was originated.
 ### What solution is better instead of _key/value_ for the batch layer?
 **Distributed filesystems**, which spread their storage across a cluster of computers. They scale by adding more machines to the cluster. Distributed filesystems are designed so that you have fault tolerance when a machine goes down, meaning that if you lose one machine, all your files and data will still be accessible.
 
+### How does a distributed filesystem work?
+>  In an HDFS cluster, there are two types of nodes: a single namenode and multiple datanodes. When you upload a file to HDFS, the file is first chunked into blocks of a fixed size, typically between 64 MB and 256 MB. Each block is then replicated across multiple datanodes (typically three) that are chosen at random. The namenode keeps track of the file-to-block mapping and where each block is located
+>  ![](https://github.com/oswaldochan/5_MassiveData/blob/master/cap3&4/images/Anotaci%C3%B3n%202020-05-24%2018554666.png?raw=true)
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDY4NzE2OTUsLTE0ODM0MzQyOTUsLT
-E4MjQ3NjE2NF19
+eyJoaXN0b3J5IjpbMTg2NTI1MTk3NCwtMTQ4MzQzNDI5NSwtMT
+gyNDc2MTY0XX0=
 -->

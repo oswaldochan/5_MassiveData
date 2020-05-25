@@ -12,9 +12,7 @@
   <div class="stackedit__left">
     <div class="stackedit__toc">
       
-<ul>
-<li><a href="#questions">Questions</a>
-<ul>
+
 <li><a href="#chapter-3">Chapter 3</a></li>
 <li><a href="#chapter-4">Chapter 4</a>
 <ul>

@@ -31,8 +31,12 @@ You don't get a comprehensive alert of how the problem was originated.
 ### What are the _storage_ requirements for the batch layer?
 ![](https://github.com/oswaldochan/5_MassiveData/blob/master/cap3&4/images/Anotaci%C3%B3n%202020-05-24%201855466.png?raw=true)  
 
-### Why using _key/value_ for the batch layer i
+### Why using _key/value_ for the batch layer isn't the best decision?
+> Because it has a lot of things you don’t need: random reads, random writes, and all the machinery behind making those work. In fact, most of the implementation of a key/value store is dedicated to these features you don’t need at all. This means the tool is enormously more complex than it needs to be to meet your requirements, making it much more likely you’ll have a problem with it
+
+### What solution is better instead of _key/value_ for the batch layer?
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTc1MDUzOTksLTE0ODM0MzQyOTUsLT
-E4MjQ3NjE2NF19
+eyJoaXN0b3J5IjpbMTYwNzUyNDk5MSwtMTQ4MzQzNDI5NSwtMT
+gyNDc2MTY0XX0=
 -->

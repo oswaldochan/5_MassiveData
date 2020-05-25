@@ -26,8 +26,10 @@ You don't get a comprehensive alert of how the problem was originated.
 > 
 ## Chapter 4
 #### But first, let's recapitulate what we learnt about the Lambda Architecture
- 
-## 
+ ![enter image description here](https://github.com/oswaldochan/5_MassiveData/blob/master/cap3&4/images/Anotaci%C3%B3n%202020-05-24%20185546.png?raw=true)
+
+### What are the _storage_ requirements   
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODM0MzQyOTUsLTE4MjQ3NjE2NF19
+eyJoaXN0b3J5IjpbNTQxMjk2NzYzLC0xNDgzNDM0Mjk1LC0xOD
+I0NzYxNjRdfQ==
 -->

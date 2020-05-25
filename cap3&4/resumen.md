@@ -28,8 +28,11 @@ You don't get a comprehensive alert of how the problem was originated.
 #### But first, let's recapitulate what we learnt about the Lambda Architecture
  ![enter image description here](https://github.com/oswaldochan/5_MassiveData/blob/master/cap3&4/images/Anotaci%C3%B3n%202020-05-24%20185546.png?raw=true)
 
-### What are the _storage_ requirements   
+### What are the _storage_ requirements for the batch layer?
+![](https://github.com/oswaldochan/5_MassiveData/blob/master/cap3&4/images/Anotaci%C3%B3n%202020-05-24%201855466.png?raw=true)  
+
+### Why using _key/value_ for the batch layer i
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQxMjk2NzYzLC0xNDgzNDM0Mjk1LC0xOD
-I0NzYxNjRdfQ==
+eyJoaXN0b3J5IjpbLTE3MTc1MDUzOTksLTE0ODM0MzQyOTUsLT
+E4MjQ3NjE2NF19
 -->

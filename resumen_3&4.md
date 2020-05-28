@@ -53,16 +53,16 @@ You don’t get a comprehensive alert of how the problem was originated.</p>
 </blockquote>
 <ul>
 <li><strong>Nodes</strong>: a single value that may have any of several representations.</li>
-<li><strong>Edges</strong>: each edge can be represented as a struct containing two nodes:</li>
+<li><strong>Edges</strong>: each edge can be represented as a struct containing two nodes: a :ingle namenode and</li>
 <li><strong>Properties</strong>:  contains a node and a value for the property</li>
 </ul>
 <h3 id="why-is-so-important-that-in-thrift-schemas-can-evolve-over-time">Why is so important that in Thrift schemas can evolve over time?</h3>
 <blockquote>
 <p>It is a crucial property, because as your business requirements change you’ll need to add new kinds of data, and you’ll want to do so as effortlessly as possible.</p>
 </blockquote>
-<h3 id="what-is-the-limitation-of-serialization-frameworks">What is the limitation of serialization frameworks?</h3>
+<h3 id="what-is-the-limitation-of-serialization-frameworks">What isthe limitation of serialization frameworks?</h3>
 <blockquote>
-<p>They only check that all required fields are present and are of the expected type. They’re unable to check richer properties like “Ages should be non-negative” or “true-as-of timestamps should not be in the future.” Data not matching these properties would indicate a problem in your system, and you wouldn’t want them written to your master dataset.</p>
+<p>They only check hequired fields are present and are of the expected type. They’re unable to check richer properties like “Ages should be non-negative” or “true-as-of timestamps should not be in the future.” Data not matching these properties would indicate a problem in your system, and you wouldn’t want them written to your master dataset.</p>
 </blockquote>
 <h2 id="chapter-4">Chapter 4</h2>
 <h4 id="but-first-lets-recapitulate-what-we-learnt-about-the-lambda-architecture">But first, let’s recapitulate what we learnt about the Lambda Architecture</h4>
@@ -97,6 +97,5 @@ You don’t get a comprehensive alert of how the problem was originated.</p>
 
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTQ2OTU4MTUsLTE2NjczNzc2NjNdfQ
-==
+eyJoaXN0b3J5IjpbLTYyNTg5MTI5MSwtMTY2NzM3NzY2M119
 -->

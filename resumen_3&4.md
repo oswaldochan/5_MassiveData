@@ -62,7 +62,7 @@ You don’t get a comprehensive alert of how the problem was originated.</p>
 </blockquote>
 <h3 id="what-is-the-limitation-of-serialization-frameworks">What isthe limitation of serialization frameworks?</h3>
 <blockquote>
-<p>They only check hequired fields are present and are of the expected type. They’re unable to check richer properties like “Ages should be non-negative” or “true-as-of timestamps should not be in the future.” Data not matching these properties would indicate a problem in your system, and you wouldn’t want them written to your master dataset.</p>
+<p>They only check if required fields are present and if they are of the expected type. They’re unable to check richer properties like “Ages should be non-negative” or “true-as-of timestamps should not be in the future.” Data not matching these properties would indicate a problem in your system, and you wouldn’t want them written to your master dataset.</p>
 </blockquote>
 <h2 id="chapter-4">Chapter 4</h2>
 <h4 id="but-first-lets-recapitulate-what-we-learnt-about-the-lambda-architecture">But first, let’s recapitulate what we learnt about the Lambda Architecture</h4>
@@ -97,5 +97,5 @@ You don’t get a comprehensive alert of how the problem was originated.</p>
 
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyNTg5MTI5MSwtMTY2NzM3NzY2M119
+eyJoaXN0b3J5IjpbLTc2NjI4ODk3MywtMTY2NzM3NzY2M119
 -->

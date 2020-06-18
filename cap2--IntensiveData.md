@@ -1,4 +1,21 @@
-[TOC]
+- [Chapter 2: Data models and query languages](#chapter-2--data-models-and-query-languages)
+  * [Relational model vs Document model](#relational-model-vs-document-model)
+    + [What was the original purpose of RDBMS and what are their current purposes?](#what-was-the-original-purpose-of-rdbms-and-what-are-their-current-purposes-)
+    + [What are the main reasons people want to adopt NOSQL databases?](#what-are-the-main-reasons-people-want-to-adopt-nosql-databases-)
+    + [What is impedance mismatch?](#what-is-impedance-mismatch-)
+    + [What is the advantage of using _ID_’s in a database?](#what-is-the-advantage-of-using--id--s-in-a-database-)
+    + [How have document models handled _one-to-many relationships_?](#how-have-document-models-handled--one-to-many-relationships--)
+    + [What are the main arguments in the Relational vs Document battle?](#what-are-the-main-arguments-in-the-relational-vs-document-battle-)
+  * [Query language for Data](#query-language-for-data)
+    + [What is an imperative language?](#what-is-an-imperative-language-)
+    + [What is a declarative language and what are its advantage?](#what-is-a-declarative-language-and-what-are-its-advantage-)
+    + [What is _MapReduce_?](#what-is--mapreduce--)
+  * [Graph-like Data Models](#graph-like-data-models)
+    + [When is recommended to use a graph data model?](#when-is-recommended-to-use-a-graph-data-model-)
+    + [What are the elements of _Property Graphs_?](#what-are-the-elements-of--property-graphs--)
+    + [What is cypher?](#what-is-cypher-)
+    + [What are the elements of _Triple-Stores Model_?](#what-are-the-elements-of--triple-stores-model--)
+    + [In a few words, what is the main difference between the two main NoSQL models?](#in-a-few-words--what-is-the-main-difference-between-the-two-main-nosql-models-)
 
 # Chapter 2: Data models and query languages
 

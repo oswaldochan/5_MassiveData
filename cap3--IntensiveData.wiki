@@ -1,6 +1,6 @@
 __TOC__
 
-= Chapter 3 =
+= Chapter 3: Storage and Retrieval =
 
 === What is a ''log'' according to the book? ===
 

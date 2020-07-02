@@ -1,0 +1,91 @@
+__TOC__
+
+= Chapter 4: Encoding and Evolution =
+
+=== Why code changes in large applications cannot happen instantaneously? ===
+
+*  With '''server-side''' applications you may want to perform a rolling upgrade (also known as a staged rollout), deploying the new version to a few nodes at a time, checking whether the new version is running smoothly, and gradually working your way through all the nodes.
+*  With '''client-side''' applications you’re at the mercy of the user, who may not install the update for some time.
+
+== Formats for Encoding Data ==
+
+=== What are the two ways programs work with data? ===
+
+* '''In memory''', data is kept in objects, structs, lists, arrays, hash tables, trees, and so on. These data structures are optimized for efficient access and manipulation by the CPU (typically using pointers)
+* When you want to write data to a file or send it over the network, you have to '''encode''' it as some kind of '''self-contained sequence of bytes''' (for example, a JSON document).
+
+=== What are the problems of using ''language-specific'' encoding methods? ===
+
+* The encoding is often tied to a particular programming language, and reading the data in another language is very difficult: 
+** If you store or transmit data in such an encoding, you are committing yourself to your current programming language for potentially a very long time, and precluding integrating your systems with those of other organizations (which may use different languages).
+* In order to restore data in the same object types, the decoding process needs to be able to instantiate arbitrary classes:
+** This is frequently a source of security problems
+*  Versioning data is often an afterthought in these libraries: 
+** As they are intended for quick and easy encoding of data, they often neglect the inconvenient problems of forward and backward compatibility.
+*  Efficiency (CPU time taken to encode or decode, and the size of the encoded structure) is also often an afterthought
+
+=== Mention 3 popular standardized encodings: ===
+
+JSON and XML are widely known, widely supported, and almost as widely disliked. '''XML''' is often criticized for being too verbose and unnecessarily complicated. '''JSON'''’s popularity is mainly due to its built-in support in web browsers (by virtue of being a subset of JavaScript) and simplicity relative to XML. '''CSV''' is another popular language-independent format, albeit less powerful.<br />
+JSON, XML, and CSV are textual formats, and thus somewhat human-readable (although the syntax is a popular topic of debate).
+
+=== What are the main problems of those formats? ===
+
+* There is a lot of ambiguity around the encoding of numbers.
+* • JSON and XML have good support for Unicode character strings (i.e., human-readable text), but they don’t support binary strings (sequences of bytes without a character encoding.
+* There is optional schema support for both XML and JSON. These schema languages are quite powerful, and thus quite complicated to learn and implement.
+* CSV does not have any schema, so it is up to the application to define the meaning of each row and column. If an application change adds a new row or column, you have to handle that change manually.
+
+=== How do Thrift and Protocol Buffers handle schema changes while keeping backward and forward compatibility? ===
+
+An encoded record is just the concatenation of its encoded fields. Each field is identified by its tag number (the numbers 1 , 2 , 3 in the sample schemas) and annotated with a datatype (e.g., string or integer). If a field value is not set, it is simply omitted from the encoded record. You can change the name of a field in the schema, since the encoded data never refers to field names, but you cannot change a field’s tag, since that would make all existing encoded data<br />
+invalid.<br />
+You can add new fields to the schema, provided that you give each field a new tag number. If old code (which doesn’t know about the new tag numbers you added) tries to read data written by new code, including a new field with a tag number it doesn’t recognize, it can simply ignore that field. The datatype annotation allows the parser to determine how many bytes it needs to skip. This maintains forward compatibility: old code can read records that were written by new code.<br />
+What about backward compatibility? As long as each field has a unique tag number, new code can always read old data, because the tag numbers still have the same meaning. The only detail is that if you add a new field, you cannot make it required.<br />
+If you were to add a field and make it required, that check would fail if new code read data written by old code, because the old code will not have written the new field that you added. Therefore, to maintain backward compatibility, every field you add after the initial deployment of the schema must be optional or have a default value.
+
+=== How does Avro work? ===
+
+To parse the binary data, you go through the fields in the order that they appear in the schema and use the schema to tell you the datatype of each field. This means that the binary data can only be decoded correctly if the code reading the data is using the exact same schema as the code that wrote the data. Any mismatch in the schema between the reader and the writer would mean incorrectly decoded data
+
+<blockquote>When an application wants to encode some data (to write it to a file or database, to send it over the network, etc.), it encodes the data using whatever version of the schema it knows about—for example, that schema may be compiled into the application. This is known as the '''writer’s schema'''.<br />
+When an application wants to decode some data (read it from a file or database, receive it from the network, etc.), it is expecting the data to be in some schema, which is known as the '''reader’s schema'''.
+</blockquote>
+=== What are the advantages of using binary encodings based on schemas? ===
+
+* They can be much more compact than the various “binary JSON” variants, since they can omit field names from the encoded data.
+* The schema is a valuable form of documentation, and because the schema is required for decoding, you can be sure that it is up to date
+*  Keeping a database of schemas allows you to check forward and backward compatibility of schema changes, before anything is deployed.
+*  For users of statically typed programming languages, the ability to generate code from the schema is useful, since it enables type checking at compile time.
+
+== Modes of Dataflow ==
+
+=== What are the 3 Dataflows mentioned in the book? ===
+
+* Dataflow through Databases
+* Dataflow through Services: REST and RPC
+* Messag-Passing Dataflow
+
+=== Why is forward compatibility need for databases? ===
+
+In an environment where the application is changing, it is likely that some processes accessing the database will be running newer code and some will be running older code—for example because a new version is currently being deployed in a rolling upgrade, so some instances have been updated while others haven’t yet.<br />
+This means that a value in the database may be written by a newer version of the code, and subsequently read by an older version of the code that is still running.
+
+=== What is REST? ===
+
+EST is not a protocol, but rather a design philosophy that builds upon the principles of HTTP. It emphasizes simple data formats, using URLs for identifying resources and using HTTP features for cache control, authentication, and content type negotiation. REST has been gaining popularity compared to SOAP, at least in the context of cross-organizational service integration, and is often associated with microservices. An API designed according to the principles of REST is called RESTful.
+
+=== What is SOAP? ===
+
+SOAP is an XML-based protocol for making network API requests. Although it is most commonly used over HTTP, it aims to be independent from HTTP and avoids using most HTTP features. Instead, it comes with a sprawling and complex multitude of related standards (the web service framework, known as WS-*) that add various features. The API of a SOAP web service is described using an XML-based language called the Web Services Description Language, or WSDL. WSDL enables code generation so that a client can access a remote service using local classes and method calls (which are encoded to XML messages and decoded again by the framework).
+
+=== What is RPC? ===
+
+The RPC (Remote Procedure Call) model tries to make a request to a remote network service look the same as calling a function or method in your programming language, within the same process (this abstraction is called location transparency).<br />
+Although RPC seems convenient at first, the approach is fundamentally flawed
+
+=== How does Message-Passing Dataflow relate to the two previous models? ===
+
+They are similar to RPC in that a client’s request (usually called a message) is delivered to another process with low latency. They are similar to databases in that the message is not sent via a direct network connection, but goes via an intermediary called a message broker (also called a message queue or message-oriented middleware), which stores the message temporarily.
+
+However, a difference compared to RPC is that message-passing communication is usually one-way: a sender normally doesn’t expect to receive a reply to its messages. It is possible for a process to send a response, but this would usually be done on a separate channel. This communication pattern is asynchronous: the sender doesn’t wait for the message to be delivered, but simply sends it and then forgets about it.

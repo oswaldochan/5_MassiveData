@@ -73,8 +73,7 @@ When the follower processes this log, it builds a copy of the exact same data st
 
 if you run the same query on the leader and a follower at the same time, you may get different results, because not all writes have been reflected in the follower. This inconsistency is just a temporary state—if you stop writing to the database and wait a while, the followers will eventually catch up and become consistent with the leader
 
-=== How can we implement ''read-after-write'' techniques in a system with leader-based<br />
-replication? ===
+=== How can we implement ''read-after-write'' techniques in a system with leader-based replication? ===
 
 * When reading something that the user may have modified, read it from the leader; otherwise, read it from a follower. This requires that you have some way of knowing whether something might have been modified, without actually querying it
 * You could track the time of the last update and, for one minute after the last update, make all reads from the leader. You could also monitor the replication lag on followers and prevent queries on any follower that is more than one minute behind the leader

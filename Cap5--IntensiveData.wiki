@@ -1,0 +1,151 @@
+__TOC__
+
+= Chapter 5: Replication =
+
+=== What is replication and why would you want to replicate your data? ===
+
+It means keeping a copy of the same data on multiple machines that are connected via a network.
+
+A machine should be able to handle a copy of all the dataset
+
+You would want to keep your data replicated:
+
+* To keep data geographically close to your users (and thus reduce latency)
+*  To allow the system to continue working even if some of its parts have failed (and thus increase availability)
+* To scale out the number of machines that can serve read queries (and thus increase read throughput)
+
+== Leaders and Followers ==
+
+=== How does a ''leader-base replication'' work? ===
+
+# One of the replicas is designated the leader (also known as master or primary). When clients want to write to the database, they must send their requests to the leader, which first writes the new data to its local storage
+# The other replicas are known as followers (read replicas, slaves, secondaries, or hot standbys). Whenever the leader writes new data to its local storage, it also sends the data change to all of its followers as part of a replication log or change stream. Each follower takes the log from the leader and updates its local copy of the database accordingly, by applying all writes in the same order as they were processed on the leader
+# When a client wants to read from the database, it can query either the leader or any of the followers. However, writes are only accepted on the leader (the followers are read-only from the client’s point of view).
+
+=== What is the advantage and disadvantage of synchronous replication? ===
+
+* The advantage of synchronous replication is that the follower is guaranteed to have an up-to-date copy of the data that is consistent with the leader. If the leader suddenly fails, we can be sure that the data is still available on the follower. 
+
+<ul>
+<li><p>The disadvantage is that if the synchronous follower doesn’t respond (because it has crashed, or there is a network fault, or for any other reason), the write cannot be processed. The leader must block all writes and wait until the synchronous replica is available again.</p>
+<p>For that reason, it is impractical for all followers to be synchronous: any one node outage would cause the whole system to grind to a halt.</p></li></ul>
+
+=== How is the set up of a follower? ===
+
+# Take a consistent snapshot of the leader’s database at some point in time—if possible, without taking a lock on the entire database. Most databases have this feature, as it is also required for backups. In some cases, third-party tools are needed, such as innobackupex for MySQL.
+# Copy the snapshot to the new follower node
+# The follower connects to the leader and requests all the data changes that have happened since the snapshot was taken. This requires that the snapshot is associated with an exact position in the leader’s replication log. That position has various names: for example, PostgreSQL calls it the log sequence number, and MySQL calls it the binlog coordinates.
+# When the follower has processed the backlog of data changes since the snapshot, we say it has caught up. It can now continue to process data changes from the leader as they happen
+
+=== How do you achieve high availability with leader-bases replication? ===
+
+==== Follower failure: Catch-up recovery ====
+
+If a follower crashes and is restarted, or if the network between the leader and the follower is temporarily interrupted, the follower can recover quite easily: from its log, it knows the last transaction that was processed before the fault occurred. Thus, the follower can connect to the leader and request all the data changes that occurred during the time when the follower was disconnected.
+
+==== Leader failure: Failover ====
+
+One of the followers needs to be promoted to be the new leader, clients need to be reconfigured to send their writes to the new leader, and the other followers need to start consuming data changes from the new leader. This process is called failover.
+
+===== Automatic failure process: =====
+
+*  Determining that the leader has failed.
+* Choosing a new leader
+* Re-configuring the system to use the new leader.
+
+===== Things that can go wrong: =====
+
+* If asynchronous replication is used, the new leader may not have received all the writes from the old leader before it failed.
+*  Discarding writes is especially dangerous if other storage systems outside of the database need to be coordinated with the database contents
+*  In certain fault scenarios, it could happen that two nodes both believe that they are the leader. This situation is called split brain, and it is dangerous: if both leaders accept writes, and there is no process for resolving conflicts, data is likely to be lost or corrupted
+
+=== Mention different replication methods: ===
+
+* Statement-based replication: in the simplest case, the leader logs every write request (statement) that it executes and sends that statement log to its followers
+* Write-ahead log (WAL) shipping: we can use the exact same log to build a replica on another node: besides writing the log to disk, the leader also sends it across the network to its followers.<br />
+When the follower processes this log, it builds a copy of the exact same data structures as found on the leader.
+* Logical (row-based) log replication: An alternative is to use different log formats for replication and for the storage engine, which allows the replication log to be decoupled from the storage engine internals. 
+* Trigger-based replication: a trigger lets you register custom application code that is automatically executed when a data change (write transaction) occurs in a database system. The trigger has the opportunity to log this change into a separate table, from which it can be read by an external process
+
+== Problems with Replication ==
+
+=== What is eventual consistency? ===
+
+if you run the same query on the leader and a follower at the same time, you may get different results, because not all writes have been reflected in the follower. This inconsistency is just a temporary state—if you stop writing to the database and wait a while, the followers will eventually catch up and become consistent with the leader
+
+=== How can we implement ''read-after-write'' techniques in a system with leader-based<br />
+replication? ===
+
+* When reading something that the user may have modified, read it from the leader; otherwise, read it from a follower. This requires that you have some way of knowing whether something might have been modified, without actually querying it
+* You could track the time of the last update and, for one minute after the last update, make all reads from the leader. You could also monitor the replication lag on followers and prevent queries on any follower that is more than one minute behind the leader
+* The client can remember the timestamp of its most recent write—then the system can ensure that the replica serving any reads for that user reflects updates at least until that timestamp.
+*  If your replicas are distributed across multiple datacenters (for geographical proximity to users or for availability), there is additional complexity. Any request that needs to be served by the leader must be routed to the datacenter that contains the leader
+
+=== What are monotonic reads? ===
+
+When you read data, you may see an old value; monotonic reads only means that if one user makes several reads in sequence, they will not see time go backward—i.e., they will not read older data after having previously read newer data.
+
+=== What are consistent prefix reads? ===
+
+This guarantee says that if a sequence of writes happens in a certain order, then anyone reading those writes will see them appear in the same order.
+
+== Multi-leader Replication ==
+
+=== When is reasonable to use multi-leader replication? ===
+
+* Multi-datacenter operation:Imagine you have a database with replicas in several different datacenters (perhaps so that you can tolerate failure of an entire datacenter, or perhaps in order to be closer to your users).
+* Clients with offline operation: another situation in which multi-leader replication is appropriate is if you have an application that needs to continue to work while it is disconnected from the internet.
+* Collaborative editing: When one user edits a document, the changes are instantly applied to their local replica (the state of the document in their web browser or client application) and asynchronously replicated to the server and any other users who are editing the same document. The application must obtain a lock on the document before a user can edit it. If another user wants to edit the same document, they first have to wait until the first user has committed their changes and released the lock.
+
+=== How can we achieve convergent conflict resolutions? ===
+
+* By avoiding conflicts
+* Give each write a unique ID (e.g., a timestamp, a long random number, a UUID, or a hash of the key and value), pick the write with the highest ID as the winner, and throw away the other writes. If a timestamp is used, this technique is known as last write wins (LWW).
+*  Give each replica a unique ID, and let writes that originated at a higher-numbered replica always take precedence over writes that originated at a lower-numbered replica. This approach also implies data loss.
+*  Somehow merge the values together—e.g., order them alphabetically and then concatenate them.
+* Record the conflict in an explicit data structure that preserves all information, and write application code that resolves the conflict at some later time
+
+=== What is replication topology and what are its types? ===
+
+A replication topology describes the communication paths along which writes are propagated from one node to another. If you have two leaders, lthere is only one plausible topology: leader 1 must send all of its writes to leader 2, and vice versa. With more than two leaders, various different topologies are possible:
+
+==== All-to-all ====
+
+In which every leader sends its writes to every other leader. However, more restricted topologies are also used.
+
+==== Circular and star topologies ====
+
+ A write may need to pass through several nodes before it reaches all replicas. Therefore, nodes need to forward data changes they receive from other nodes. To prevent infinite replication loops, each node is given a unique identifier, and in the replication log, each write is tagged with the identifiers of all the nodes it has passed through. When a node receives a data change that is tagged with its own identifier, that data change is ignored, because the node knows that it has already been processed
+
+== Leaderless Replication ==
+
+=== What is Read repair and Anti-Entropy Process? ===
+
+==== Read repair: ====
+
+When a client makes a read from several nodes in parallel, it can detect any stale responses.
+
+==== Anti-entropy process: ====
+
+In addition, some datastores have a background process that constantly looks for differences in the data between replicas and copies any missing data from one replica to another. Unlike the replication log in leader-based replication, this anti-entropy process does not copy writes in any particular order, and there may be a significant delay before data is copied.
+
+=== Why leaderless are appealing for a use case that requires high availability and low latency? ===
+
+Databases with appropriately configured quorums can tolerate the failure of individual nodes without the need for failover. They can also tolerate individual nodes going slow, because requests don’t have to wait for all n nodes to respond—they can return when w or r nodes have responded
+
+=== What is a sloppy quorum? ===
+
+In a large cluster (with significantly more than n nodes) it’s likely that the client can connect to some database nodes during the network interruption, just not to the nodes that it needs to assemble a quorum for a particular value. In that case, database designers face a trade-off:
+
+* Is it better to return errors to all requests for which we cannot reach a quorum of<br />
+w or r nodes?
+* Or should we accept writes anyway, and write them to some nodes that are<br />
+reachable but aren’t among the n nodes on which the value usually lives?
+
+The latter is known as a sloppy quorum [37]: writes and reads still require w and r successful responses, but those may include nodes that are not among the designated n “home” nodes for a value. By analogy, if you lock yourself out of your house, you may knock on the neighbor’s door and ask whether you may stay on their couch temporarily.<br />
+Once the network interruption is fixed, any writes that one node temporarily accepted on behalf of another node are sent to the appropriate “home” nodes. This is called hinted handoff. (Once you find the keys to your house again, your neighbor politely asks you to get off their couch and go home.)
+
+=== What is concurrency? ===
+
+For defining concurrency, exact time doesn’t matter: we simply call two operations concurrent if they are both unaware of each other, regardless of the physical time at which they occurred. People sometimes make a connection between this principle and the special theory of relativity in physics, which introduced the idea that information cannot travel faster than the speed of light. Consequently, two events that occur some distance apart cannot possibly affect each other if the time between the events is shorter than the time it takes light to travel the distance between them.<br />
+In computer systems, two operations might be concurrent even though the speed of light would in principle have allowed one operation to affect the other. For example, if the network was slow or interrupted at the time, two operations can occur some time apart and still be concurrent, because the network problems prevented one operation from being able to know about the other.

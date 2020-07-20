@@ -1,0 +1,97 @@
+__TOC__
+
+= Chapter 6: Partitioning =
+
+=== What is partitioning? ===
+
+ Partitioning, as discussed in this chapter, is a way of intentionally breaking a large database down into smaller ones. It has nothing to do with network partitions (netsplits), a type of fault in the network between nodes.
+
+Normally, partitions are defined in such a way that each piece of data (each record, row, or document) belongs to exactly one partition. There are various ways of achieving this. In effect, each partition is a small database of its own, although the database may support operations that touch multiple partitions at the same time.
+
+== Partitioning and Replication ==
+
+=== How is partitioning related to replication? ===
+
+Partitioning is usually combined with replication so that copies of each partition are stored on multiple nodes. This means that, even though each record belongs to exactly one partition, it may still be stored on several different nodes for fault tolerance.
+
+== Partitioning of Key-Data Values ==
+
+=== What is skewness in data partitioning? ===
+
+If the partitioning is unfair, so that some partitions have more data or queries than others, we call it skewed. The presence of skew makes partitioning much less effective.<br />
+In an extreme case, all the load could end up on one partition, so 9 out of 10 nodes are idle and your bottleneck is the single busy node. A partition with disproportionately high load is called a '''hot spot'''.
+
+=== What is partitioning by Key Range? ===
+
+One way of partitioning is to assign a continuous range of keys (from some minimum to some maximum) to each partition. If you know the boundaries between the ranges, you can easily determine which partition contains a given key. If you also know which partition is assigned to which node, then you can make your request directly to the appropriate node.
+
+=== What is partitioning by Hash of Key? ===
+
+Because of this risk of skew and hot spots, many distributed datastores use a hash function to determine the partition for a given key.<br />
+A good hash function takes skewed data and makes it uniformly distributed. Say you have a 32-bit hash function that takes a string. Whenever you give it a new string, it returns a seemingly random number between 0 and 2 32 − 1. Even if the input strings are very similar, their hashes are evenly distributed across that range of numbers.
+
+=== What is Consistent Hashing? ===
+
+It is a way of evenly distributing load across an internet-wide system of caches such as a content delivery network (CDN).<br />
+It uses randomly chosen partition boundaries to avoid the need for central control or distributed consensus. Note that consistent here has nothing to do with replica consistency or ACID consistency , but rather describes a particular approach to rebalancing.
+
+== Partitioning and Secondary Indexes ==
+
+=== What is the problem with secondary indexes? ===
+
+The problem with secondary indexes is that they don’t map neatly to partitions.<br />
+There are two main approaches to partitioning a database with secondary indexes: document-based partitioning and term-based partitioning.
+
+=== What is document-based partitioning? ===
+
+For example, imagine you are operating a website for selling used cars. Each listing has a unique ID—call it the document ID—and you partition the database by the document ID (for example, IDs 0 to 499 in partition 0, IDs 500 to 999 in partition 1, etc.).
+
+You want to let users search for cars, allowing them to filter by color and by make, so you need a secondary index on color and make (in a document database these would be fields; in a relational database they would be columns). If you have declared the index, the database can perform the indexing automatically. For example, whenever a red car is added to the database, the database partition automatically adds it to the list of document IDs for the index entry color: red.
+
+=== What is term-based partitioning? ===
+
+A global index must also be partitioned, but it can be partitioned differently from the primary key index.<br />
+Per example, red cars from all partitions appear under color:red in the index, but the index is partitioned so that colors starting with the letters a to r appear in partition 0 and colors starting with s to z appear in partition 1. The index on the make of car is partitioned similarly (with the partition boundary being between f and h).<br />
+We call this kind of index term-partitioned, because the term we’re looking for determines the partition of the index. Here, a term would be color:red , for example. The name term comes from full-text indexes (a particular kind of secondary index), where the terms are all the words that occur in a document.<br />
+As before, we can partition the index by the term itself, or using a hash of the term.<br />
+Partitioning by the term itself can be useful for range scans (e.g., on a numeric property, such as the asking price of the car), whereas partitioning on a hash of the term gives a more even distribution of load
+
+== Re-balancing Partitions ==
+
+=== What is rebalancing? ===
+
+The process of moving load from one node in the cluster to another is called rebalancing.<br />
+No matter which partitioning scheme is used, rebalancing is usually expected to meet some minimum requirements:
+
+* After rebalancing, the load (data storage, read and write requests) should be shared fairly between the nodes in the cluster.
+* While rebalancing is happening, the database should continue accepting reads and writes.
+* No more data than necessary should be moved between nodes, to make rebalancing fast and to minimize the network and disk I/O load.
+
+=== Mention some strategies for rebalancing: ===
+
+==== Fixed number of partitions ====
+
+Create many more partitions than there are nodes, and assign several partitions to each node. For example, a database running on a cluster of 10 nodes may be split into 1,000 partitions from the outset so that approximately 100 partitions are assigned to each node.<br />
+Now, if a node is added to the cluster, the new node can steal a few partitions from every existing node until partitions are fairly distributed once again.
+
+==== Dynamic partitioning ====
+
+Key range–partitioned databases such as HBase and RethinkDB create partitions dynamically. When a partition grows to exceed a configured size (on HBase, the default is 10 GB), it is split into two partitions so that approximately half of the data ends up on each side of the split 
+
+==== Partitioning proportionally to nodes ====
+
+A third option, used by Cassandra and Ketama, is to make the number of partitions proportional to the number of nodes—in other words, to have a fixed number of partitions per node [23, 27, 28]. In this case, the size of each partition grows proportionally to the dataset size while the number of nodes remains unchanged, but when you increase the number of nodes, the partitions become smaller again.
+
+=== What are some considerations of automated rebalancing? ===
+
+Fully automated rebalancing can be convenient, because there is less operational work to do for normal maintenance. However, it can be unpredictable. Rebalancing is an expensive operation, because it requires rerouting requests and moving a large amount of data from one node to another. If it is not done carefully, this process can overload the network or the nodes and harm the performance of other requests while the rebalancing is in progress.
+
+For that reason, it can be a good thing to have a human in the loop for rebalancing. It’s slower than a fully automatic process, but it can help prevent operational surprises
+
+== Request Routing ==
+
+=== What are some approaches to ''service discovery''? ===
+
+* Allow clients to contact any node (e.g., via a round-robin load balancer). If that node coincidentally owns the partition to which the request applies, it can handle the request directly; otherwise, it forwards the request to the appropriate node, receives the reply, and passes the reply along to the client.
+* Send all requests from clients to a routing tier first, which determines the node that should handle each request and forwards it accordingly. This routing tier does not itself handle any requests; it only acts as a partition-aware load balancer.
+* Require that clients be aware of the partitioning and the assignment of partitions to nodes. In this case, a client can connect directly to the appropriate node, without any intermediary

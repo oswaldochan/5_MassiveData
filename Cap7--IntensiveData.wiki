@@ -1,0 +1,49 @@
+__TOC__
+
+
+
+= Chapter 7: Transactions =
+
+== 1. Mention 4 things that can go wrong in the harsh reality of data systems. ==
+
+Answers may vary. Student should be able to describe at least 4 of the following:
+
+# The database software or hardware may fail at any time (including in the middle of a write operation).
+# The application may crash at any time (including halfway through a series of operations).
+# Interruptions in the network can unexpectedly cut off the application from the database, or one database node from another.
+# Several clients may write to the database at the same time, overwriting eachc other’s changes.
+# A client may read data that doesn’t make sense because it has only partially been updated.
+# Race conditions between clients can cause surprising bugs.
+
+== 2. What are transactions used for? Does every application need one? ==
+
+* For decades, transactions have been the mechanism of choice for simplifying these issues. A transaction is a way for an application to group several reads and writes together into a logical unit. Conceptually, all the reads and writes in a transaction are executed as one operation: either the entire transaction succeeds (commit) or it fails (abort, rollback). If it fails, the application can safely retry. With transactions, error handling becomes much simpler for an application, because it doesn’t need to worry about partial failure.
+
+* Transactions are not a law of nature; they were created with a purpose, namely to simplify the programming model for applications accessing a database. By using transactions, the application is free to ignore certain potential error scenarios and concurrency issues, because the database takes care of them instead. '''Not every application needs transactions''', and sometimes there are advantages to weakening transactional guarantees or abandoning them entirely
+
+== 3. What does ACID stand for and what is its purpose? ==
+
+* The safety guarantees provided by transactions are often described by the wellknown acronym ACID, which stands for '''Atomicity, Consistency, Isolation, and Durability'''. It was coined in 1983 in an effort to establish '''precise terminology for fault-tolerance mechanisms in databases.'''
+
+== 4. What is ''atomicity'' in the context of ACID? ==
+
+* '''ACID atomicity''' describes what happens if a client wants to make several writes, but a fault occurs after some of the writes have been processed. Without '''atomicity''', if an error occurs partway through making multiple changes, it’s difficult to know which changes have taken effect and which haven’t. The application could try again, but that risks making the same change twice, leading to duplicate or incorrect data. '''Atomicity''' simplifies this problem: if a transaction was aborted, the application can be sure that it didn’t change anything, so it can safely be retried.
+
+== 5. What is ''consistency'' in the context of ACID? ==
+
+* The idea of '''ACID consistency''' is that you have certain statements about your data (invariants) that must always be true. However, this idea of '''consistency''' depends on the application’s notion of invariants, and it’s the application’s ''responsibility'' to define its transactions correctly so that they preserve consistency. This is not something that the database can guarantee: if you write bad data that violates your invariants, the database can’t stop you. 
+
+== 6. What is ''isolation'' in the context of ACID? ==
+
+* '''Isolation''' in the sense of ACID means that concurrently executing transactions areisolated from each other: they cannot step on each other’s toes. The classic database textbooks formalize '''isolation''' as serializability, which means that each transaction can pretend that it is the only transaction running on the entire database. The database ensures that when the transactions have committed, the result is the same as if they had run serially (one after another), even though in reality they may have run con‐ currently.
+* However, in practice, serializable isolation is rarely used, because it carries a perfor‐ mance penalty.
+
+== 7. What is ACID's meaning for ''durability''? ==
+
+* '''Durability''' is the promise that once a transaction has committed successfully, any data it has written will not be forgotten, even if there is a hardware fault or the database crashes.
+* In a single-node database, '''durability''' typically means that the data has been written to nonvolatile storage such as a hard drive or SSD.
+
+== 8. When are concurrency issues present? ==
+
+* If two transactions don’t touch the same data, they can safely be run in parallel, because neither depends on the other. Concurrency issues (race conditions) only come into play when one transaction reads data that is concurrently modified by another transaction, or when two transactions try to simultaneously modify the same data. 
+* Concurrency bugs are hard to find by testing, because such bugs are only triggered when you get unlucky with the timing. Such timing issues might occur very rarely, and are usually difficult to reproduce.
